@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>org.easytesting</groupId>
   <artifactId>fest-test</artifactId>
-  <version>2.0</version>
+  <version>2.1</version>
   <name>FEST Testing</name>
   <description>Utility methods for testing FEST modules</description>
   <inceptionYear>2008</inceptionYear>
@@ -13,7 +13,7 @@
   <parent>
     <groupId>org.easytesting</groupId>
     <artifactId>fest</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.3</version>
   </parent>
   <mailingLists>
     <mailingList>
@@ -24,9 +24,9 @@
     </mailingList>
   </mailingLists>
   <scm>
-    <developerConnection>scm:svn:https://svn.codehaus.org/fest/</developerConnection>
-    <connection>scm:svn:http://svn.codehaus.org/fest/</connection>
-    <url>http://fisheye.codehaus.org/browse/fest/</url>
+    <developerConnection>scm:git:git@github.com:alexruiz/fest-test.git</developerConnection>
+    <connection>scm:git:git://github.com/alexruiz/fest-test.git</connection>
+    <url>https://github.com/alexruiz/fest-test</url>
   </scm>
   <issueManagement>
     <system>JIRA</system>
@@ -36,13 +36,13 @@
     <dependency>
       <groupId>org.easytesting</groupId>
       <artifactId>fest-util</artifactId>
-      <version>1.1.2</version>
+      <version>1.1.5-SNAPSHOT</version>
       <scope>compile</scope>
     </dependency>
     <dependency>
     	<groupId>junit</groupId>
     	<artifactId>junit</artifactId>
-    	<version>4.7</version>
+    	<version>4.8.2</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>
