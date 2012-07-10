@@ -13,7 +13,7 @@
   <parent>
     <groupId>org.easytesting</groupId>
     <artifactId>fest</artifactId>
-    <version>1.0.13</version>
+    <version>1.0.14-SNAPSHOT</version>
   </parent>
   <mailingLists>
     <mailingList>
@@ -42,7 +42,6 @@
     <dependency>
     	<groupId>junit</groupId>
     	<artifactId>junit</artifactId>
-    	<version>4.10</version>
       <scope>compile</scope>
     </dependency>
   </dependencies>
