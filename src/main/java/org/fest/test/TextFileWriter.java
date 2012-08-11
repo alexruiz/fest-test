@@ -51,6 +51,6 @@ public class TextFileWriter {
       close(writer);
     }
   }
-
+  
   private TextFileWriter() {}
 }
