@@ -14,9 +14,6 @@
  */
 package org.fest.test;
 
-import static org.fest.util.Objects.*;
-import static org.fest.util.Strings.quote;
-
 /**
  * A person.
  * 
@@ -36,8 +33,9 @@ public class Person implements Comparable<Person> {
 
   @Override
   public int hashCode() {
+    final int prime = 31;
     int result = 1;
-    result = HASH_CODE_PRIME * result + hashCodeFor(name);
+    result = prime * result + ((name == null) ? 0 : name.hashCode());
     return result;
   }
 
@@ -47,7 +45,10 @@ public class Person implements Comparable<Person> {
     if (obj == null) return false;
     if (getClass() != obj.getClass()) return false;
     Person other = (Person) obj;
-    return areEqual(name, other.name);
+    if (name == null) {
+      if (other.name != null) return false;
+    } else if (!name.equals(other.name)) return false;
+    return true;
   }
 
   public int compareTo(Person other) {
@@ -56,6 +57,6 @@ public class Person implements Comparable<Person> {
 
   @Override
   public String toString() {
-    return String.format("Person[name=%s]", quote(name));
+    return String.format("Person[name='%s']", name);
   }
 }

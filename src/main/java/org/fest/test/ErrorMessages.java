@@ -14,7 +14,6 @@
  */
 package org.fest.test;
 
-import static org.fest.util.ToString.toStringOf;
 
 /**
  * @author Alex Ruiz
@@ -56,7 +55,7 @@ public final class ErrorMessages {
   }
 
   public static String isNotArray(Object o) {
-    return String.format("The object <%s> should be an array", toStringOf(o));
+    return String.format("The object <%s> should be an array", o);
   }
 
   public static String iterableToLookForIsNull() {

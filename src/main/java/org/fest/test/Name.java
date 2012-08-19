@@ -14,7 +14,6 @@
  */
 package org.fest.test;
 
-import static org.fest.util.Strings.quote;
 
 /**
  * @author Yvonne Wang
@@ -53,6 +52,6 @@ public class Name {
 
   @Override
   public String toString() {
-    return String.format("%s[first=%s, last=%s]", getClass().getSimpleName(), quote(first), quote(last));
+    return String.format("%s[first='%s', last='%s']", getClass().getSimpleName(), first, last);
   }
 }
