@@ -23,8 +23,9 @@ import java.util.Comparator;
  */
 public class PersonCaseInsensitiveNameComparator implements Comparator<Person> {
 
+  @Override
   public int compare(Person p1, Person p2) {
-    return p1.name().toLowerCase().compareTo(p2.name().toLowerCase());
+    return p1.getName().toLowerCase().compareTo(p2.getName().toLowerCase());
   }
 
 }

@@ -27,7 +27,7 @@ public class Person implements Comparable<Person> {
     this.name = name;
   }
 
-  public String name() {
+  public String getName() {
     return name;
   }
 
@@ -51,6 +51,7 @@ public class Person implements Comparable<Person> {
     return true;
   }
 
+  @Override
   public int compareTo(Person other) {
     return name.compareTo(other.name);
   }
