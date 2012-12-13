@@ -10,7 +10,7 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  *
- * Copyright @2009-2011 the original author or authors.
+ * Copyright @2009-2012 the original author or authors.
  */
 package org.fest.test;
 
@@ -21,7 +21,6 @@ package org.fest.test;
  * @author Alex Ruiz
  */
 public interface EqualsHashCodeContractTestCase {
-
   void should_not_be_equal_to_Object_of_different_type();
 
   /**

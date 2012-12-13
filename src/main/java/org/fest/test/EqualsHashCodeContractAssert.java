@@ -10,11 +10,12 @@
  * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the
  * specific language governing permissions and limitations under the License.
  *
- * Copyright @2009-2011 the original author or authors.
+ * Copyright @2009-2012 the original author or authors.
  */
 package org.fest.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 /**
  * Assertion methods that verify that an object's {@code equals} and {@code hashCode} are implemented correctly.
@@ -22,7 +23,6 @@ import static org.junit.Assert.*;
  * @author Alex Ruiz
  */
 public final class EqualsHashCodeContractAssert {
-
   /**
    * Verifies that the {@code equals} implementation of the given object returns {@code false} when the object is
    * compared to {@code null}.
