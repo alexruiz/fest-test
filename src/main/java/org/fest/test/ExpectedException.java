@@ -37,9 +37,9 @@ public class ExpectedException implements TestRule {
     return delegate.apply(base, description);
   }
 
-  public void expect(Throwable error) {
-    expect(error.getClass());
-    expectMessage(error.getMessage());
+  public void expect(Class<? extends Throwable> type, String message) {
+    expect(type);
+    expectMessage(message);
   }
 
   public void expect(Class<? extends Throwable> type) {
