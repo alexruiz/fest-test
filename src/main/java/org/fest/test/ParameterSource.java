@@ -19,13 +19,15 @@ import static java.util.Collections.unmodifiableList;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.annotation.Nonnull;
+
 /**
  * Data provider for parameterized tests.
  *
  * @author Alex Ruiz
  */
 public class ParameterSource {
-  public static List<Object[]> parametersFrom(List<?> values) {
+  public static List<Object[]> parametersFrom(@Nonnull List<?> values) {
     List<Object[]> parameters = new ArrayList<Object[]>();
     for (Object value : values) {
       parameters.add(new Object[] { value });

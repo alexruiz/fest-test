@@ -14,6 +14,8 @@
  */
 package org.fest.test;
 
+import javax.annotation.Nonnull;
+
 import org.junit.rules.TestRule;
 import org.junit.runner.Description;
 import org.junit.runners.model.Statement;
@@ -37,16 +39,16 @@ public class ExpectedException implements TestRule {
     return delegate.apply(base, description);
   }
 
-  public void expect(Class<? extends Throwable> type, String message) {
+  public void expect(@Nonnull Class<? extends Throwable> type, @Nonnull String message) {
     expect(type);
     expectMessage(message);
   }
 
-  public void expect(Class<? extends Throwable> type) {
+  public void expect(@Nonnull Class<? extends Throwable> type) {
     delegate.expect(type);
   }
 
-  public void expectMessage(String message) {
+  public void expectMessage(@Nonnull String message) {
     delegate.expectMessage(message);
   }
 }

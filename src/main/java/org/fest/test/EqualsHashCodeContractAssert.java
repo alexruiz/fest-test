@@ -17,6 +17,8 @@ package org.fest.test;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
+import javax.annotation.Nonnull;
+
 /**
  * Assertion methods that verify that an object's {@code equals} and {@code hashCode} are implemented correctly.
  *
@@ -31,7 +33,7 @@ public final class EqualsHashCodeContractAssert {
    * object compared to {@code null}.
    * @see EqualsHashCodeContractTestCase#should_not_be_equal_to_null()
    */
-  public static void assertIsNotEqualToNull(Object obj) {
+  public static void assertIsNotEqualToNull(@Nonnull Object obj) {
     assertFalse(obj.equals(null));
   }
 
@@ -42,7 +44,7 @@ public final class EqualsHashCodeContractAssert {
    * @param obj the object to verify.
    * @throws AssertionError if the {@code equals} implementation of the given object is reflexive.
    */
-  public static void assertEqualsIsReflexive(Object obj) {
+  public static void assertEqualsIsReflexive(@Nonnull Object obj) {
     assertEquals(obj, obj);
   }
 
@@ -55,7 +57,7 @@ public final class EqualsHashCodeContractAssert {
    * @param obj2 the object to compare to.
    * @throws AssertionError if the {@code equals} implementation of the given object is not symmetric.
    */
-  public static void assertEqualsIsSymmetric(Object obj1, Object obj2) {
+  public static void assertEqualsIsSymmetric(@Nonnull Object obj1, @Nonnull Object obj2) {
     assertEquals(obj1, obj2);
     assertEquals(obj2, obj1);
   }
@@ -71,7 +73,7 @@ public final class EqualsHashCodeContractAssert {
    * @param obj3 an object to compare to.
    * @throws AssertionError if the {@code equals} implementation of the given objects is not transitive.
    */
-  public static void assertEqualsIsTransitive(Object obj1, Object obj2, Object obj3) {
+  public static void assertEqualsIsTransitive(@Nonnull Object obj1, @Nonnull Object obj2, @Nonnull Object obj3) {
     assertEquals(obj1, obj2);
     assertEquals(obj2, obj3);
     assertEquals(obj1, obj3);
@@ -85,7 +87,7 @@ public final class EqualsHashCodeContractAssert {
    * @throws AssertionError if the {@code equals}/{@code hashCode} contract of the given objects is not implemented
    * correctly.
    */
-  public static void assertMaintainsEqualsAndHashCodeContract(Object obj1, Object obj2) {
+  public static void assertMaintainsEqualsAndHashCodeContract(@Nonnull Object obj1, @Nonnull Object obj2) {
     assertEquals(obj1, obj2);
     assertEquals(obj1.hashCode(), obj2.hashCode());
   }
