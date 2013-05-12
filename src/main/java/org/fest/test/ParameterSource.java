@@ -14,26 +14,26 @@
  */
 package org.fest.test;
 
-import static java.util.Collections.unmodifiableList;
-
+import javax.annotation.Nonnull;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.annotation.Nonnull;
+import static java.util.Collections.unmodifiableList;
 
 /**
  * Data provider for parameterized tests.
  *
  * @author Alex Ruiz
  */
-public class ParameterSource {
-  public static List<Object[]> parametersFrom(@Nonnull List<?> values) {
+public final class ParameterSource {
+  private ParameterSource() {
+  }
+
+  public static @Nonnull List<Object[]> parametersFrom(@Nonnull List<?> values) {
     List<Object[]> parameters = new ArrayList<Object[]>();
     for (Object value : values) {
-      parameters.add(new Object[] { value });
+      parameters.add(new Object[]{value});
     }
     return unmodifiableList(parameters);
   }
-
-  private ParameterSource() {}
 }

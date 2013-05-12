@@ -14,14 +14,13 @@
  */
 package org.fest.test;
 
-import java.util.Arrays;
-
-import javax.annotation.Nonnull;
-
 import org.junit.internal.matchers.TypeSafeMatcher;
 import org.junit.rules.TestRule;
 import org.junit.runner.Description;
 import org.junit.runners.model.Statement;
+
+import javax.annotation.Nonnull;
+import java.util.Arrays;
 
 /**
  * Allows in-test specification of expected exception types and messages.
@@ -31,11 +30,12 @@ import org.junit.runners.model.Statement;
 public class ExpectedException implements TestRule {
   private final org.junit.rules.ExpectedException delegate = org.junit.rules.ExpectedException.none();
 
+  private ExpectedException() {
+  }
+
   public static ExpectedException none() {
     return new ExpectedException();
   }
-
-  private ExpectedException() {}
 
   @Override
   public Statement apply(Statement base, Description description) {
@@ -55,7 +55,7 @@ public class ExpectedException implements TestRule {
     delegate.expectMessage(message);
   }
 
-  public void expectMessageToContain(final @Nonnull String...strings) {
+  public void expectMessageToContain(final @Nonnull String... strings) {
     delegate.expectMessage(new TypeSafeMatcher<String>() {
       @Override
       public void describeTo(org.hamcrest.Description description) {

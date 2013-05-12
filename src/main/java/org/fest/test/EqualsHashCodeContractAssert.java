@@ -14,10 +14,10 @@
  */
 package org.fest.test;
 
+import javax.annotation.Nonnull;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
-
-import javax.annotation.Nonnull;
 
 /**
  * Assertion methods that verify that an object's {@code equals} and {@code hashCode} are implemented correctly.
@@ -25,12 +25,16 @@ import javax.annotation.Nonnull;
  * @author Alex Ruiz
  */
 public final class EqualsHashCodeContractAssert {
+  private EqualsHashCodeContractAssert() {
+  }
+
   /**
    * Verifies that the {@code equals} implementation of the given object returns {@code false} when the object is
    * compared to {@code null}.
+   *
    * @param obj the object to verify.
    * @throws AssertionError if the {@code equals} implementation of the given objects returns {@code true} when the
-   * object compared to {@code null}.
+   *                        object compared to {@code null}.
    * @see EqualsHashCodeContractTestCase#should_not_be_equal_to_null()
    */
   public static void assertIsNotEqualToNull(@Nonnull Object obj) {
@@ -41,6 +45,7 @@ public final class EqualsHashCodeContractAssert {
    * Verifies that the {@code equals} implementation of the given object is reflexive: the object must be equal to
    * itself, which it would be at any given instance; unless you intentionally override the equals method to behave
    * otherwise.
+   *
    * @param obj the object to verify.
    * @throws AssertionError if the {@code equals} implementation of the given object is reflexive.
    */
@@ -53,6 +58,7 @@ public final class EqualsHashCodeContractAssert {
    * to another class object, the other class object must be equal to this class object. In other words, one object can
    * not unilaterally decide whether it is equal to another object; two objects, and consequently the classes to which
    * they belong, must bilaterally decide if they are equal or not. They BOTH must agree.
+   *
    * @param obj1 the object to verify.
    * @param obj2 the object to compare to.
    * @throws AssertionError if the {@code equals} implementation of the given object is not symmetric.
@@ -68,6 +74,7 @@ public final class EqualsHashCodeContractAssert {
    * object. In other words, if two objects agree that they are equal, and follow the symmetry principle, one of them
    * can not decide to have a similar contract with another object of different class. All three must agree and follow
    * symmetry principle for various permutations of these three classes.
+   *
    * @param obj1 the object to verify.
    * @param obj2 an object to compare to.
    * @param obj3 an object to compare to.
@@ -82,15 +89,14 @@ public final class EqualsHashCodeContractAssert {
   /**
    * Verifies that the {@code equals}/{@code hashCode} contract of the given objects is implemented correctly: if two
    * objects are equal, then they must have the same hash code, however the opposite is NOT true.
+   *
    * @param obj1 the object to verify.
    * @param obj2 the object to compare to.
    * @throws AssertionError if the {@code equals}/{@code hashCode} contract of the given objects is not implemented
-   * correctly.
+   *                        correctly.
    */
   public static void assertMaintainsEqualsAndHashCodeContract(@Nonnull Object obj1, @Nonnull Object obj2) {
     assertEquals(obj1, obj2);
     assertEquals(obj1.hashCode(), obj2.hashCode());
   }
-
-  private EqualsHashCodeContractAssert() {}
 }
