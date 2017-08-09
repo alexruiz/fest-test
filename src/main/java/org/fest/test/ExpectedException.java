@@ -19,7 +19,7 @@ import org.junit.rules.TestRule;
 import org.junit.runner.Description;
 import org.junit.runners.model.Statement;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 import java.util.Arrays;
 
 /**
@@ -42,20 +42,20 @@ public class ExpectedException implements TestRule {
     return delegate.apply(base, description);
   }
 
-  public void expect(@Nonnull Class<? extends Throwable> type, @Nonnull String message) {
+  public void expect(@NotNull Class<? extends Throwable> type, @NotNull String message) {
     expect(type);
     expectMessage(message);
   }
 
-  public void expect(@Nonnull Class<? extends Throwable> type) {
+  public void expect(@NotNull Class<? extends Throwable> type) {
     delegate.expect(type);
   }
 
-  public void expectMessage(@Nonnull String message) {
+  public void expectMessage(@NotNull String message) {
     delegate.expectMessage(message);
   }
 
-  public void expectMessageToContain(final @Nonnull String... strings) {
+  public void expectMessageToContain(final @NotNull String... strings) {
     delegate.expectMessage(new TypeSafeMatcher<String>() {
       @Override
       public void describeTo(org.hamcrest.Description description) {

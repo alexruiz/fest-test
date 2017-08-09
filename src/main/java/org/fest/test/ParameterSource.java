@@ -14,7 +14,7 @@
  */
 package org.fest.test;
 
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,7 +29,7 @@ public final class ParameterSource {
   private ParameterSource() {
   }
 
-  public static @Nonnull List<Object[]> parametersFrom(@Nonnull List<?> values) {
+  public static @NotNull List<Object[]> parametersFrom(@NotNull List<?> values) {
     List<Object[]> parameters = new ArrayList<Object[]>();
     for (Object value : values) {
       parameters.add(new Object[]{value});
